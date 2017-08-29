@@ -8,4 +8,19 @@
 	<%= link_to "delete", post_path(p), method: :DELETE %><br>
 <% end %>
 
-<%= link_to "New", new_post_path %>
+
+
+
+
+
+<% if user_signed_in? %>
+    <!--로그인했으면 누구누구 님 환영합니당-->
+
+		<%= link_to "New Post", new_post_path %> </br>
+
+		<%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "로그아웃하시겠습니까?"} %>
+<% else %>
+    <!--로그인 안 했으면 로그인/회원가입 버튼-->
+    <%= link_to "Login", user_session_path, class: ""%>
+    <li><%= link_to "Sign up", new_user_registration_path, class: ""%></li>
+<% end %>
