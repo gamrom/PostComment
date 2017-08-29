@@ -1,0 +1,10 @@
+<h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p>
+
+<%= @post.title %><br>
+<%= @post.content %><br>
+<%= link_to "Back", posts_path %>
+
+<h1>Comment</h1>
+
+<%= render "comments/comment" %>

@@ -1,0 +1,11 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<% @posts.each do |p| %>
+	<%= p.title %>
+	<%= link_to "show", post_path(p) %>
+	<%= link_to "edit", edit_post_path(p) %>
+	<%= link_to "delete", post_path(p), method: :DELETE %><br>
+<% end %>
+
+<%= link_to "New", new_post_path %>
